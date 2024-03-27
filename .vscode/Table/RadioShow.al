@@ -1,4 +1,5 @@
-table 50149 "Radio show"
+
+table 50205 "Radio show"
 {
     DataClassification = ToBeClassified;
 
