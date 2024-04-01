@@ -1,5 +1,5 @@
 
-table 50205 "Radio show"
+table 50210 "Radio show"
 {
     DataClassification = ToBeClassified;
 
@@ -9,6 +9,12 @@ table 50205 "Radio show"
         {
             DataClassification = ToBeClassified;
 
+        }
+
+        Field(100; "For NO.Series"; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
         }
 
         field(2; "Radio Show type"; Code[10])
@@ -68,10 +74,14 @@ table 50205 "Radio show"
     }
 
     var
-        myInt: Integer;
+        "IsSales&Rec": Record "Sales & Receivables Setup";
+        isCodeUnit: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
+        if rec."No." = '' then
+            "IsSales&Rec".Get();
+        isCodeUnit.InitSeries("IsSales&Rec"."Radio Show", "IsSales&Rec"."Radio Show", 0D, "No.", "For NO.Series")
 
     end;
 
