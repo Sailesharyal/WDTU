@@ -30,6 +30,11 @@ table 50205 "Radio show"
             DataClassification = ToBeClassified;
         }
 
+        field(11; "Host Code"; code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
+
         field(6; "Average Listeners"; Decimal)
         {
             DataClassification = ToBeClassified;

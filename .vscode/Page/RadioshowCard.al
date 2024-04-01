@@ -1,16 +1,15 @@
-page 50206 "Radio show list "
+page 50205 "Radioshowcard"
 {
-    PageType = List;
+    PageType = Card;
     ApplicationArea = All;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     SourceTable = "Radio show";
-    CardPageId = "Radioshowcard";
 
     layout
     {
         area(Content)
         {
-            repeater(General)
+            group(GroupName)
             {
                 field("No."; Rec."No.")
                 {
@@ -61,10 +60,6 @@ page 50206 "Radio show list "
                 }
             }
         }
-        area(Factboxes)
-        {
-
-        }
     }
 
     actions
@@ -82,4 +77,7 @@ page 50206 "Radio show list "
             }
         }
     }
+
+    var
+        myInt: Integer;
 }
