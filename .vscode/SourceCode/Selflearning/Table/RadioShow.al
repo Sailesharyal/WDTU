@@ -2,6 +2,7 @@
 table 50210 "Radio show"
 {
     DataClassification = ToBeClassified;
+    Permissions =;
 
     fields
     {
